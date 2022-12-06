@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Quick Start - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <style>
+        body{
+            background: rgb(94,7,103);
+background: linear-gradient(262deg, rgba(94,7,103,1) 24%, rgba(139,72,5,1) 68%);
+         } b
+         
+         #map{ position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+     </style>
+     <style>
+         .navlog{
+             width:50px;
+             float:left;
+         }
+      
+        .navMenu{  overflow:hidden;background-color:#100f14}.navMenu a{float:left; display:block;color:#f2f2f2;text-align:center;padding:14px 16px;text-decoration:none;font-size:17px}.navMenu a.active{background-color:#25a186;color:#FFF}.navMenu .icon{display:none}.fa-bars:before{content:"\f0c9"}.navMenu .dropdown{float:left;overflow:hidden}.navMenu .dropdown .dropbtn{font-size:16px;border:none;outline:none;color:#FFFFFF;padding:14px 16px;background-color:#100f14;font-family:inherit;margin:0;width:100%;text-align:left}.main_links{background-color:#100f14;color:#FFFFFF;line-height:1}.main_links:hover{background-color:#302e38;color:#f7d6f4}.navMenu .navbar a:hover,.navMenu .dropdown:hover .dropbtn{background-color:#302e38;color:#72146b}.navMenu .dropdown-content{display:none;position:absolute;background-color:#000;min-width:160px;box-shadow:0 8px 16px 0 rgba(0,0,0,0.2);z-index:1}.navMenu .dropdown-content a{float:none;color:#FFF;padding:12px 16px;text-decoration:none;display:block;text-align:left;background-color:#808040;color:#000000}.navMenu .dropdown-content a:hover{background-color:#333;color:#FFFFFF}.navMenu .dropdown:hover .dropdown-content{display:block}@media screen and (max-width: 768px){.navMenu a:not(:first-child){display:none}.navMenu .dropdown{display:none}.navMenu a.icon{float:right;display:block}.navMenu.mobileView{position:relative}.navMenu.mobileView .icon{position:absolute;right:0;top:0}.navMenu.mobileView a{float:none;display:block;text-align:left}.navMenu.mobileView .dropdown{float:none;display:block;text-align:left}.navMenu .dropdown-content{position:relative}}
+        </style>
+        <style>
+            div.blueTable {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  border: 0px solid #1C6EA4;
+  background-color: #FFFFFF;
+  width: 88%;
+  text-align: center;
+  border-collapse: collapse;
+}
+.divTable.blueTable .divTableCell, .divTable.blueTable .divTableHead {
+  border: 0px solid #5AAA2B;
+  padding: 5px 0px;
+}
+.divTable.blueTable .divTableBody .divTableCell {
+  font-size: 18px;
+  color: #020202;
+}
+.divTable.blueTable .divTableRow:nth-child(even) {
+  background: #A29989;
+}
+.blueTable .tableFootStyle {
+  font-size: 14px;
+}
+.blueTable .tableFootStyle .links {
+	 text-align: right;
+}
+.blueTable .tableFootStyle .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.blueTable.outerTableFooter {
+  border-top: none;
+}
+.blueTable.outerTableFooter .tableFootStyle {
+  padding: 3px 5px; 
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}
+        </style>
+        
+	
+</head>
+<body>
+
+
+    <div class='navMenu' id='navMenuId'><img class="navlog" src="soul.jpg"><a href='map.html' class='main_links'>Home</a><a href='about.html' class='main_links'>about</a><a class='icon' href='javascript:void(0);' onclick='openMenu()'>&#9776;</a></div>
+    <br> 
+    <br>
+   
+<center><div id="mapid" style="width: 1200px; height: 500px;"></div>
+
+<br>
+<div style="width: 1200px;" class="divTable blueTable">
+    <h1>Map key</h1>
+    <div class="divTableBody">
+    <div class="divTableRow">
+    <div class="divTableCell">Happy</div>
+    <div class="divTableCell">🟢</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">Sad</div>
+    <div class="divTableCell">🔵</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">Excited</div>
+    <div class="divTableCell">🟡</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">Angry</div>
+    <div class="divTableCell">🔴</div>
+    </div>
+    </div>
+    </div>
+
+</center>
+
+
+<script>
+    function openMenu() {  var navMain = document.getElementById('navMenuId');  if (navMain.className=== 'navMenu') {    navMain.className += ' mobileView';  } else {    navMain.className = 'navMenu';  }}
+    </script>
+    <script>
+        	var mymap = L.map('mapid').setView([8.974271, 38.760624], 12);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1
+}).addTo(mymap);
+
+
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+}
+
+mymap.on('click', onMapClick);
+    </script>
+    <script>
+
+var LeafIcon = L.Icon.extend({
+    options: {
+        
+        iconSize:     [30, 40],
+        shadowSize:   [50, 64],
+        iconAnchor:   [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor:  [-3, -76]
+    }
+});
+
+var blueIcon = new LeafIcon({iconUrl: 'blue.png'}),
+    greenIcon = new LeafIcon({iconUrl: 'green.png'}),
+    redIcon = new LeafIcon({iconUrl: 'red.png'}),
+    yellowIcon = new LeafIcon({iconUrl: 'yellow.png'});
+
+    L.icon = function (options) {
+    return new L.Icon(options);
+};
+L.marker([8.99767, 38.691616], {icon: blueIcon}).addTo(mymap).bindPopup("I am sad.");
+L.marker([8.973254, 38.774185], {icon: greenIcon}).addTo(mymap).bindPopup("I am happy.");
+L.marker([9.016659, 38.732471], {icon: redIcon}).addTo(mymap).bindPopup("I am angry.");
+L.marker([9.022423, 38.843365], {icon: yellowIcon}).addTo(mymap).bindPopup("I am excited.");
+
+    </script>
+</body>
+</html>
+
+
+    
+    

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:#100F14;
+        }
+/* this is for the image animation */
+        #animation-demo {
+	width: 300px;
+	position: relative;
+} 
+
+.animated {
+	-webkit-animation-duration: 3.2s;
+	animation-duration: 3.2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count:infinite;
+	-webkit-animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes swing { 
+    20%, 40%, 60%, 80%, 100% { -webkit-transform-origin: top center; } 
+    20% { -webkit-transform: rotate(15deg); } 
+    40% { -webkit-transform: rotate(-10deg); } 
+    60% { -webkit-transform: rotate(5deg); } 
+    80% { -webkit-transform: rotate(-5deg); } 
+    100% { -webkit-transform: rotate(0deg); } 
+} 
+@keyframes swing { 
+    20% { transform: rotate(15deg); } 
+    40% { transform: rotate(-10deg); } 
+    60% { transform: rotate(5deg); } 
+    80% { transform: rotate(-5deg); } 
+    100% { transform: rotate(0deg); } 
+} 
+.swing { 
+    -webkit-transform-origin: top center; 
+    transform-origin: top center; 
+    -webkit-animation-name: swing; 
+    animation-name: swing; 
+}
+
+.ana{
+    font-size:40px;
+}
+.trademark{
+    font-size: 80px;
+    background: #CF4C0A;
+background: -webkit-linear-gradient(to right, #CF4C0A 10%, #860D9E 100%);
+background: -moz-linear-gradient(to right, #CF4C0A 10%, #860D9E 100%);
+background: linear-gradient(to right, #CF4C0A 10%, #860D9E 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+/* button style */
+.btn {
+  background: #db974f;
+  background-image: -webkit-linear-gradient(top, #db974f, #b82bb3);
+  background-image: -moz-linear-gradient(top, #db974f, #b82bb3);
+  background-image: -ms-linear-gradient(top, #db974f, #b82bb3);
+  background-image: -o-linear-gradient(top, #db974f, #b82bb3);
+  background-image: linear-gradient(to bottom, #db974f, #b82bb3);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  text-shadow: 3px 3px 3px #615561;
+  -webkit-box-shadow: 2px 2px 28px #c244c2;
+  -moz-box-shadow: 2px 2px 28px #c244c2;
+  box-shadow: 2px 2px 28px #c244c2;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 12px 30px 10px 25px;
+  border: solid #1f628d 0px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #ae23b8;
+  background-image: -webkit-linear-gradient(top, #ae23b8, #e68f43);
+  background-image: -moz-linear-gradient(top, #ae23b8, #e68f43);
+  background-image: -ms-linear-gradient(top, #ae23b8, #e68f43);
+  background-image: -o-linear-gradient(top, #ae23b8, #e68f43);
+  background-image: linear-gradient(to bottom, #ae23b8, #e68f43);
+  text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <center><img id="animation-demo" class="animated swing" src="soul.jpg" alt="logo"><br><br><br>
+    <div  class="trademark ">
+Soultrack<sup class="ana">live</sup>
+    </div><br><br>
+    <button onclick="window.location.href='map.html'; "  class="btn">Go!</button>
+</center>
+</body>
+</html>

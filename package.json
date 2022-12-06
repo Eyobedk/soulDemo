@@ -1,0 +1,25 @@
+{
+  "name": "soultrack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start-dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.6",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^3.0.0",
+    "node-telegram-bot-api": "^0.60.0"
+  },
+  "devDependencies": {
+    "express-mongo-sanitize": "^2.2.0",
+    "install": "^0.13.0"
+  }
+}
