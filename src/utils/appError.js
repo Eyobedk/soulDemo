@@ -29,8 +29,8 @@ const geh = (err, req, res, next) => {
   }
 
 
-  // Send error for Dev Environment
-  if (configs.env === "development") {
+  // Send error for Dev production
+  if (configs.env === "production") {
     res.status(err.statusCode).json({
       status: err.status,
       message: err.message,
