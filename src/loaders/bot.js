@@ -1,4 +1,4 @@
-require('dotenv').config()
+
 const path = "../public/location/loca.jpg";
 const emotioncoll = require('../api/research/model');
 const check = require('../bot/varifyandRegister');
@@ -43,8 +43,8 @@ exports.main = async()=> {
                 bot.sendMessage(msg.chat.id, "here is how to do it");
                 bot.sendPhoto(msg.chat.id, "https://res.cloudinary.com/forfeta/image/upload/v1670365445/loca_jsrhnp.jpg");
                 bot.once("location", async (msg) => {
-                    console.log(msg)
-                        if (msg.location.longitude) {
+
+                    if (msg.location.longitude) {
                             global.locations = [msg.chat.id, msg.location.longitude, msg.location.latitude];
                             bot.sendMessage(msg.chat.id, "Your Emotions are avalible in Ethiopia");
                             bot.sendMessage(msg.chat.id, " here http://localhost:5000/");

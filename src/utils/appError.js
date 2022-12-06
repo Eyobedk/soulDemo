@@ -1,7 +1,7 @@
 // Custom Error class
 
 // Config
-const configs = require("../configs");
+const configs = require("../../configs");
 
 // App Error
 const AppError = function (message, statusCode) {

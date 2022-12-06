@@ -5,7 +5,7 @@ const http = require("http");
 const bot = require("./bot");
 const app = require('./app');
 const database =require('./database');
-const configs = require('../configs')
+const configs = require('../../configs')
 
 
 // Igniter function

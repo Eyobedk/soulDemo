@@ -4,7 +4,7 @@
 const mongoose = require("mongoose");
 
 // Configs
-const configs = require("../configs");
+const configs = require("../../configs");
 
 // Connect with DB
 
