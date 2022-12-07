@@ -10,10 +10,7 @@ const configs = require("../../configs");
 
 module.exports = async()=>{
   await mongoose
-  .connect(configs.url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+  .connect(configs.url)
   .then((conn) => {
     console.log(`Successfully Connected`);
   })
