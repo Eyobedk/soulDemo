@@ -14,7 +14,7 @@ module.exports = async() => {
   const server = http.createServer(app);
 
   // Port
-  const port = configs.port || 5000;
+  const port = configs.port;
 
   // Listen
   server.listen(port, () => {
