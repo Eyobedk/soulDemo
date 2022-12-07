@@ -7,7 +7,7 @@ const {AppError, geh} = require("../utils/appError");
 
 
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static("src/public"));
 app.set('view engine', 'ejs');
 
 app.use('/', getResearchs);
