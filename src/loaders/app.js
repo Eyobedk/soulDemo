@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const Researches = require('../api/research/controller');
 
 const getResearchs = require('../api/research/router');
 // App Error
@@ -10,8 +11,9 @@ app.use(express.json());
 app.use(express.static("src/public"));
 app.set('view engine', 'ejs');
 
-app.use('/', getResearchs);
+app.use('/singles', getResearchs);
 
+app.use('/',Researches.getsingleResearch)
 
 // Handle URL which don't exist
 app.use("*", (req, res, next) => {
